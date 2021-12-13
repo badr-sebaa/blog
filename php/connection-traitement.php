@@ -25,7 +25,7 @@
                 {
                     // On créer la session et on redirige sur index.php
                     $_SESSION['user'] = $data['id'];
-                    header('Location: index_co.php');
+                    header('Location: header.php');
                     die();
                 }else{ header('Location: connection.php?login_err=password'); die(); }
         }else{ header('Location: connection.php?login_err=already'); die(); }

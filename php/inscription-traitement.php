@@ -5,7 +5,7 @@ require_once 'config.php'; // On inclu la connexion à la bdd
 // Si les variables existent et qu'elles ne sont pas vides
 if(!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['verify']))
 {
-    echo "1";
+    
     // je crée des variable pour chaque donné 
     $name = htmlspecialchars($_POST['name']);
     $login = htmlspecialchars($_POST['login']);
@@ -19,11 +19,11 @@ if(!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password'
      $row = $check->rowCount();
 
     if($row == 0){ 
-        echo "2";
+        
         if(strlen($login) <= 100){ // On verifie que la longueur du pseudo <= 100
-            echo "3";
+            
             if($password === $verify){ // si les deux mdp saisis sont bon
-                echo "4";
+                
                           // On hash le mot de passe avec Bcrypt, via un coût de 12
                           $cost = ['cost' => 12];
                           $password = password_hash($password, PASSWORD_BCRYPT, $cost);
