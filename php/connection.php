@@ -54,7 +54,6 @@
                       <label class="form-label" for="form3Example3c">Your Login</label>
                     </div>
                   </div>
-
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
@@ -83,3 +82,7 @@
     </div>
   </div>
 </section>
+
+
+
+
