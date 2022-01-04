@@ -25,6 +25,7 @@
                 {
                     // On créer la session et on redirige sur index.php
                     $_SESSION['user'] = $data['id'];
+                    $_SESSION['avatar'] = $data['avatar'];
                     header('Location: header.php');
                     die();
                 }else{ header('Location: connection.php?login_err=password'); die(); }
