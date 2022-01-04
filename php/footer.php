@@ -1,88 +1,48 @@
-<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/footer.css">
-                          <!-- Bootstrap -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-  </head>
-<footer>
-  <footer class="container-fluid bg-grey py-5">
-  <div class="container">
-     <div class="row">
-        <div class="col-md-6">
-           <div class="row">
-              <div class="col-md-6 ">
-                 <div class="logo-part">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Gossip_Girl_title_card.jpg/260px-Gossip_Girl_title_card.jpg" class="w-50 logo-footer" >
-                    <p>8 Rue d'hozier, 13002 Marseille</p>
-                    <p>Ici GossiP_, celle qui révèle au grand jour ce que l'élite de la Plateforme se donne tant de mal à cacher.</p>
-                 </div>
-              </div>
-              <div class="col-md-6 px-4">
-                 <h6> About Company</h6>
-                 <p>Si on te pose la question tu répond je sais pas</p>
-                 <a href="#" class="btn-footer"> More Info </a><br>
-                 <a href="#" class="btn-footer"> Contact Us</a>
-              </div>
-           </div>
-        </div>
-        <div class="col-md-6">
-           <div class="row">
-              <div class="col-md-6 px-4">
-                 <h6> Help us</h6>
-                 <div class="row ">
-                    <div class="col-md-6">
-                       <ul>
-                          <li> <a href="#"> Home</a> </li>
-                          <li> <a href="#"> About</a> </li>
-                          <li> <a href="#"> Gossip</a> </li>
-                          <li> <a href="#"> Message</a> </li>
-                          <li> <a href="#"> Help</a> </li>
-                          <li> <a href="#"> Contact</a> </li>
-                       </ul>
-                    </div>
-                    <div class="col-md-6 px-4">
-                       <ul>
-                          <li> <a href="#"> Cab Faciliy</a> </li>
-                          <li> <a href="#"> Fax</a> </li>
-                          <li> <a href="#"> Terms</a> </li>
-                          <li> <a href="#"> Policy</a> </li>
-                          <li> <a href="#"> Refunds</a> </li>
-                          <li> <a href="#"> Paypal</a> </li>
-                       </ul>
-                    </div>
-                 </div>
-              </div>
-              <div class="col-md-6 ">
-                 <h6> Newsletter</h6>
-                 <div class="social">
-                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                 </div>
-                 <form class="form-footer my-3">
-                    <input type="text"  placeholder="search here...." name="search">
-                    <input type="button" value="Go" >
-                 </form>
-                 <p>That's technology limitation of LCD monitors</p>
-              </div>
-           </div>
-        </div>
-     </div>
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
   </div>
-  </footer>
+  <!-- Grid container -->
 
-</html>
-<?php
-?>
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>

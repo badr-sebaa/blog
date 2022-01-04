@@ -1,58 +1,25 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
-<div class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <div class="navbar-header">
-            <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            <a href="#" class="navbar-brand">GOSSIP_</a>
-        </div>
 
-        <div class="navbar-collapse collapse" id="mobile_menu">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Article One</a></li>
-                        <li><a href="#">Article Two</a></li>
-                        <li><a href="#">Article Three</a></li>
-                        <li><a href="#">Article Four</a></li>
-                        <li><a href="#">Article Five</a></li>
-                        <li><a href="#">Article Six</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Welcome</a></li>
-                <li><a href="#">Gossip</a></li>
-                <li><a href="#">Message</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-            <ul class="nav navbar-nav">
-                <li>
-                    <form action="" class="navbar-form">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input type="search" name="search" id="" placeholder="Search Anything Here..." class="form-control">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-                            </div>
-                        </div>
-                    </form>
-                </li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Sign Up</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Gossip_Girl_title_card.jpg/260px-Gossip_Girl_title_card.jpg" width="30" height="30" class="d-inline-block align-top" alt="">Navbar w/ text</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+    <a class="nav-link" href="#">Logout</a>
+    </span>
+  </div>
+</nav>
