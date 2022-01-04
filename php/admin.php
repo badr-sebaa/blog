@@ -44,7 +44,7 @@ $req4 = $bdd->query('SELECT * FROM commentaires');
                     echo "<th>$rows[password]</th>";
                     echo "<th>$rows[id_droits]</th>";
                     echo "<th><a href=\"modifier-utilisateur.php?id=$rows[id]\">modifier</a></th>";
-                    echo "<th><a href=\"supprimer-utilisateur.php?id=$rows[id]\">supprimer</a></th></tr>";
+                    echo "<th><a href=\"supprimer-utilisateurs.php?id=$rows[id]\">supprimer</a></th></tr>";
                 }
                 ?>
             </tbody>
@@ -74,7 +74,7 @@ $req4 = $bdd->query('SELECT * FROM commentaires');
                     echo "<th>$rows[id_utilisateur]</th>";
                     echo "<th>$rows[like]</th>";
                     echo "<th>$rows[date]</th>";
-                    echo "<th><a href=\"modifierprofil.php?id=$rows[id]\">modifier</a></th>"
+                    echo "<th><a href=\"profil.php?id=$rows[id]\">modifier</a></th>";
                 }
                 ?>
             </tbody>
@@ -104,7 +104,7 @@ $req4 = $bdd->query('SELECT * FROM commentaires');
                     echo "<th>$rows[id_utilisateur]</th>";
                     echo "<th>$rows[date]</th>";
                     echo "<th><a href=\"modifier.php?id=$rows[id]\">modifier</a></th>";
-                    echo "<th><a href=\"supprimerprofil.php?id=$rows[id]\">supprimer</a></th></tr>";
+                    echo "<th><a href=\"profil.php?id=$rows[id]\">supprimer</a></th></tr>";
                 }
                 ?>
             </tbody>

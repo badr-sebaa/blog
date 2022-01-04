@@ -10,11 +10,10 @@ var_dump($data);
 
 if (isset($_POST['inscription'])) {
 
-    if (!empty($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['passwordverify'])) {
+    if (!empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['passwordverify'])) {
 
         // Création de variable pour chaque données 
         $login =  htmlspecialchars($_POST['login']);
-        $prenom = htmlspecialchars($_POST['email']);
         $password = htmlspecialchars($_POST['password']);
         $passwordverify =  htmlspecialchars($_POST['passwordverify']);
         $id_droits = $_POST['id_droits'];
@@ -45,8 +44,8 @@ if (isset($_POST['inscription'])) {
                 header('Location:admin.php');
                 die();
             } else {
-                echo ("Votre ajout n'a pue etre effectuer veuillez réessayer.");
-                header('Location: creeruser.php');
+                echo ("veuillez réessayer.");
+                header('Location: creer-utilisateurs.php');
                 die();
             }
         }
@@ -74,12 +73,6 @@ if (isset($_POST['inscription'])) {
                             <h1 class="h-1">Ajouter un utilisateur</h1>
                             <label>Identifiant</label>
                             <input type="text" name="login" placeholder="Entrer un identifiant" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Email</label>
-                            <input type="email" name="email" placeholder="Entrer un email" required>
                         </td>
                     </tr>
                     <tr>
@@ -119,7 +112,7 @@ if (isset($_POST['inscription'])) {
             </form>
         </div>
     </main>
-    
+
     <footer >
     <?php include("footer.php"); ?>    
     </footer>
