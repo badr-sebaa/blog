@@ -13,7 +13,7 @@ if(!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password'
     $verify = htmlspecialchars($_POST['verify']);
 
      // On vérifie si l'utilisateur existe
-     $check = $bdd->prepare('SELECT * password FROM users WHERE login = ?');
+     $check = $bdd->prepare('SELECT * password FROM utilisateurs WHERE login = ?');
      $check->execute(array($login));
      $data = $check->fetch();
      $row = $check->rowCount();
@@ -30,7 +30,7 @@ if(!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password'
 
 
                           // On insère dans la base de données
-                          $insert = $bdd->prepare('INSERT INTO users(name,login,password) VALUES(:name,:login,:password)');
+                          $insert = $bdd->prepare('INSERT INTO utilisateurs (name,login,password) VALUES(:name,:login,:password)');
                           $insert->execute(array(    
                               'name' => $name,
                               'login' => $login,

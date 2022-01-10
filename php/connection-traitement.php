@@ -10,7 +10,7 @@
         
         
         // On regarde si l'utilisateur est inscrit dans la table utilisateurs
-        $check = $bdd->prepare('SELECT * FROM users WHERE login = ?');
+        $check = $bdd->prepare('SELECT * FROM utilisateurs WHERE login = ?');
         $check->execute(array($login));
         $data = $check->fetch();
         $row = $check->rowCount();

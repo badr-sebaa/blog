@@ -30,54 +30,25 @@ require_once 'config.php'; // Pour faire la connexion à notre base de données
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">RACLERIE</p>
 
-                <form class="mx-1 mx-md-4" action="php/commentaire-traitement.php" method="post">
+                <form class="mx-1 mx-md-4" action="article-traitement.php" method="post" enctype="multipart/form-data">
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i !class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4cd" class="form-control" name="verify"/>
+                      <input type="text" id="form3Example4cd" class="form-control" name="message"/>
                       <label class="form-label" for="form3Example4cd">Message</label>
                     </div>
                   </div>
 
+                  <label for="file" style="margin-bottom: 0; margin-top: 5px; display: inline-flex">
+                  <input id="file" type="file" name="file" class="hide-upload" required/>
+                  <i class="fa fa-plus image-plus"></i>
+
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" class="btn btn-primary btn-lg">TE LA RACLER</button>
+                    <input type="submit" name="submit" class="btn btn-primary btn-lg" value="TE LA RACLER">
                   </div>
                   
                 </form>
-
-                <div>
-    
-                  <?php
-                    
-                    if(file_exists("../avatars/". $_SESSION['user'] . "/" . $_SESSION['avatar']) && isset($_SESSION['avatar'])){
-                  ?>
-                  <img src="<?= "../avatars/". $_SESSION['user'] . "/" . $_SESSION['avatar']; ?>" width="120" style="width: 100%" class="rounded-circle z-depth-2" />
- 
-                  <?php
-                    }else{
-                  ?>
-                  <img src="../avatars/default/default.jpeg" width="120" style="width: 100%" class="rounded-circle"/>
-                  <?php
-                    }
-                  ?>
-                </div>
-
-    <div class="container">
-   <div class="row"> 
-      <div class="col-sm-0 col-md-2 col-lg-1"></div>
-      <div class="col-sm-12 col-md-8 col-lg-10"> 
-         <form action="avatar-traitement.php" method="post" enctype="multipart/form-data">
-            <label for="file" style="margin-bottom: 0; margin-top: 5px; display: inline-flex">
-               <input id="file" type="file" name="file" class="hide-upload" required/>
-               <i class="fa fa-plus image-plus"></i>
-               <input type="submit" name="avatar" value="Envoyer">
-            </label>
-         </form>
-      </div>
-   </div>
-</div>
-
 </div>
 </div>
 </div>

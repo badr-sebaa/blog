@@ -22,7 +22,7 @@ if(!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password'
     $new_password_retype = htmlspecialchars($_POST['verify']);
 
       // On récupère les infos de l'utilisateur
-      $check = $bdd->prepare('SELECT * FROM users WHERE id = :id');
+      $check = $bdd->prepare('SELECT * FROM utilisateurs WHERE id = :id');
       $check->execute(array(
           "id" => $_SESSION['user']
       ));
@@ -39,7 +39,7 @@ if(!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password'
               $cost = ['cost' => 12];
               $new_password = password_hash($new_password, PASSWORD_BCRYPT, $cost);
               // On met à jour la table utiisateurs
-              $update = $bdd->prepare('UPDATE users SET name = :name,login = :login,password = :password WHERE id = :id');
+              $update = $bdd->prepare('UPDATE utilisateurs SET name = :name,login = :login,password = :password WHERE id = :id');
               $update->execute(array(
                   "name" => $new_name,
                   "login" => $new_login,

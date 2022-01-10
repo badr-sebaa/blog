@@ -54,7 +54,7 @@ if(!isset($_SESSION['user'])) {
                              }
   
                              $nom = md5(uniqid(rand(), true)); // Permet de générer un nom unique à la photo
-                             $chemin = "../avatars/" . $_SESSION['user'] . "/" . $nom . "." . $extensionUpload; // Chemin pour placer la photo
+                             $chemin = "../avatars/ " . $_SESSION['user'] . "/" . $nom . "." . $extensionUpload; // Chemin pour placer la photo
                              $resultat = move_uploaded_file($_FILES['file']['tmp_name'], $chemin); // On fini par mettre la photo dans le dossier
   
                              if ($resultat){ // Si on a le résultat alors on va comprésser l'image
@@ -124,7 +124,7 @@ if(!isset($_SESSION['user'])) {
                                              imagedestroy($image_p2);
                                          }
   
-                                         $update = $bdd->prepare("UPDATE users SET avatar = ? WHERE  id = ?"); 
+                                         $update = $bdd->prepare("UPDATE utilisateurs SET avatar = ? WHERE  id = ?"); 
                                          $update->execute(array(($nom.".".$extensionUpload), $_SESSION['user']));
   
                                          $_SESSION['avatar'] = ($nom.".".$extensionUpload); // On met à jour l'avatar
