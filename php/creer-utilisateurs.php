@@ -1,12 +1,12 @@
 <?php
-
+session_start();
 require_once 'config.php'; // On inclut la connexion à la base de données
 
 $checke = $bdd->prepare("SELECT * FROM `droits`");
 $checke->execute(array());
 $row = $checke->rowCount();
 $data = $checke->fetchAll(PDO::FETCH_ASSOC);
-var_dump($data);
+
 
 if (isset($_POST['inscription'])) {
 
@@ -18,25 +18,26 @@ if (isset($_POST['inscription'])) {
         $passwordverify =  htmlspecialchars($_POST['passwordverify']);
         $id_droits = $_POST['id_droits'];
 
-
         $userid = $_GET['id'];
 
         $check = $bdd->prepare("SELECT * FROM `utilisateurs` WHERE login = '$login'");
         $check->execute(array($login));
         $rows = $check->rowCount();
 
-
         if ($rows == 0) {
+            echo 1;
             if ($password ==  $passwordverify) {
 
+                echo 2;
                 $passwordhash = password_hash($password, PASSWORD_BCRYPT);
 
                 // On insère dans la base de données
-                $insert = $bdd->prepare("INSERT INTO `utilisateurs` (`login`, `password`,`email`, `id_droits`) VALUES ('$login','$passwordhash','$email','$id_droits')");
+                $insert = $bdd->prepare("INSERT INTO `utilisateurs` (`name`,`login`, `password`,`avatar`, `id_droits`) VALUES ('$name','$login','$passwordhash','$avatar','$id_droits')");
                 $insert->execute(array(
+                    'name'=> $name,
                     'login' => $login,
                     'password' => $passwordhash,
-                    'email' => $email,
+                    'avatar' => $avatar,
                     'id_droits' => $id_droits,
                 ));
                 // On redirige avec le message de succès
@@ -71,6 +72,12 @@ if (isset($_POST['inscription'])) {
                     <tr>
                         <td>
                             <h1 class="h-1">Ajouter un utilisateur</h1>
+                            <label>name</label>
+                            <input type="text" name="name" placeholder="Entrer un nom" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <label>Identifiant</label>
                             <input type="text" name="login" placeholder="Entrer un identifiant" required>
                         </td>
@@ -94,10 +101,8 @@ if (isset($_POST['inscription'])) {
                                
                                 <? foreach ($data as $key => $cate)  { ?>
 
-                                    <option value="<? echo $cate['0']; ?>"> <? echo $cate['nom']; ?> </option>
-                                    <option value="<? echo $cate['1']; ?>"> <? echo $cate['nom']; ?> </option>
-                                    <option value="<? echo $cate['2']; ?>"> <? echo $cate['nom']; ?> </option>
-
+                                    <option value="<? echo $cate['id']; ?>"> <? echo $cate['nom']; ?> </option>
+                                   
                                 <? } ?>
 
                             </select>

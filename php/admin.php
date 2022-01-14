@@ -29,6 +29,7 @@ $req4 = $bdd->query('SELECT * FROM commentaires');
             <thead>
                 <tr>
                     <th class="th">ID</th>
+                    <th class="th">NAME</th>
                     <th class="th">LOGIN</th>
                     <th class="th">PASSWORD</th>
                     <th class="th">ID_DROIT</th>
@@ -40,6 +41,7 @@ $req4 = $bdd->query('SELECT * FROM commentaires');
                 <?php
                 while ($rows = $req->fetch()) {
                     echo "<tr><th>$rows[id]</th>";
+                    echo "<th>$rows[name]</th>";
                     echo "<th>$rows[login]</th>";
                     echo "<th>$rows[password]</th>";
                     echo "<th>$rows[id_droits]</th>";
@@ -75,11 +77,11 @@ $req4 = $bdd->query('SELECT * FROM commentaires');
                     echo "<th>$rows[like]</th>";
                     echo "<th>$rows[date]</th>";
                     echo "<th><a href=\"profil.php?id=$rows[id]\">modifier</a></th>";
+                    echo "<th><a href=\"supprimer-articles.php?id=$rows[id]\">supprimer</a></th></tr>";
                 }
                 ?>
             </tbody>
         </table>
-        <button class="button" type="submit" name="connexion"><a href="">Créer</a></button>
     </section>
         <section>
 <h2 class="h2admin">Commentaires</h2>
@@ -109,7 +111,7 @@ $req4 = $bdd->query('SELECT * FROM commentaires');
                 ?>
             </tbody>
         </table>
-        <button class="button" type="submit" name="connexion"><a href="">Créer</a></button>
+        <button class="button" type="submit" name="connexion"><a href="creer-utilisateurs.php?id=<?php $rows['id'];?>\">Créer</a></button>
     </section>
   
  <?php include("footer.php"); ?>

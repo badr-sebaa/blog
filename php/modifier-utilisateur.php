@@ -34,7 +34,7 @@
         <main>
             <div align="center">
                 <div>
-                    <h1 class="h1-">Vous etes sur le point de modifier la categorie <? echo "$userid"; ?></h1>
+                    <h1 class="h1-">Modifier utilisateur<? echo "$userid"; ?></h1>
                     <form class="form" method="POST">
                         <table class="form-inpute">
                             <tr>
