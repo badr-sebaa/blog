@@ -111,7 +111,7 @@ $req4 = $bdd->query('SELECT * FROM commentaires');
                 ?>
             </tbody>
         </table>
-        <button class="button" type="submit" name="connexion"><a href="creer-utilisateurs.php?id=<?php $rows['id'];?>\">Créer</a></button>
+        <button class="button" type="submit" name="connexion"><a href="creer-commentaires.php?id=<?php $rows['id'];?>\">Créer</a></button>
     </section>
   
  <?php include("footer.php"); ?>
