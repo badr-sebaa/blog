@@ -31,5 +31,5 @@ $req = $bdd->query('SELECT articles.article,utilisateurs.login,articles.date,art
 
 
 
-
+ <?php include "pagination.php";?>
  <?php include "footer.php"; ?>
