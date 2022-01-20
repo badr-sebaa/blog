@@ -77,7 +77,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                         ?>
                     </tbody>
                 </table>
-                <nav>
+                <nav style="margin-left: 35%;"  >
                     <ul class="pagination">
                         <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
                         <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">

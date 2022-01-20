@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : lun. 10 jan. 2022 à 12:54
+-- Généré le : jeu. 20 jan. 2022 à 13:55
 -- Version du serveur :  5.7.34
 -- Version de PHP : 7.4.21
 
@@ -41,7 +41,17 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id`, `article`, `id_utilisateur`, `image`, `date`, `verif`) VALUES
-(5, 'CHAIMA ELLE A LE CORONA', 1, '1c9fe9bea24ea9ddcf7e1ac037596b48.jpg', '2022-01-07 13:05:16', 0);
+(5, 'CHAIMA ELLE A LE CORONA', 1, '1c9fe9bea24ea9ddcf7e1ac037596b48.jpg', '2022-01-07 13:05:16', 0),
+(6, 'JASSIME  ELLEEEEE GIGAAAA DEUH', 1, '2556e915dfcc026625391a73c0cc3734.jpg', '2022-01-18 18:13:49', 0),
+(7, 'MOHA IL EST TROPPP HLOUUUU', 1, '51701c18951d32244b6eceb55a72fdd9.jpg', '2022-01-18 18:15:25', 0),
+(8, 'SAMI PINEAPPLE ', 1, 'dc39dc5c3c51d6b2ba07e43d4eab491b.jpg', '2022-01-18 18:16:36', 0),
+(9, 'BADR ABONNEZ VOUS ', 1, '9d440bfb731d544d52fe1b2b7aced29f.jpg', '2022-01-18 18:17:37', 0),
+(10, 'Mehdi chicha ', 1, 'fab51bf4668cab65fa14d35413ff96e4.jpg', '2022-01-18 18:19:20', 0),
+(11, 'royan moula', 1, '3deb56366e62c4e60f406ea67c45331b.jpg', '2022-01-18 18:20:38', 0),
+(12, 'LINA DROLE A - 20/20', 1, NULL, '2022-01-19 15:36:26', 0),
+(13, 'LINA DRLE OU PAS ? REPONDEZ LA FAFA', 1, '7822bd5dc18ae3be5c792c8e486e056a.gif', '2022-01-19 15:41:29', 0),
+(14, 'LINA DRLE OU PAS ? REPONDEZ LA FAFA', 1, '7822bd5dc18ae3be5c792c8e486e056a.gif', '2022-01-19 15:41:29', 0),
+(15, 'que des n°10 dans ma team', 1, 'c5d71d77b16c287f98945e2cb3861614.jpg', '2022-01-19 15:43:48', 0);
 
 -- --------------------------------------------------------
 
@@ -135,7 +145,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `commentaires`

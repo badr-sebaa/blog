@@ -13,6 +13,82 @@ require_once 'config.php'; // Pour faire la connexion à notre base de données
 </head>
 
 
+
+<?php 
+                if(isset($_GET['login_err']))
+                {
+                    $err = htmlspecialchars($_GET['login_err']);
+
+                    switch($err)
+                    {
+                        case 'short':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Error</strong> Message trop court !
+                            </div>
+                        <?php
+                        break;
+
+                        case 'MIME':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Error</strong> Le type MIME de l'image n'est pas bon !
+                            </div>
+                        <?php
+                        break;
+
+                        case 'MIME':
+                          ?>
+                              <div class="alert alert-danger">
+                                  <strong>Error</strong> Le type MIME de l'image n'est pas bon !
+                              </div>
+                          <?php
+                          break;
+
+                          case 'importerr':
+                            ?>
+                                <div class="alert alert-danger">
+                                    <strong>Error</strong> Erreur lors de l'importation de votre photo !
+                                </div>
+                            <?php
+                            break;
+
+                            case 'importerr':
+                              ?>
+                                  <div class="alert alert-danger">
+                                      <strong>Error</strong> Erreur lors de l'importation de votre photo !
+                                  </div>
+                              <?php
+                              break;
+
+                              case 'badformat':
+                                ?>
+                                    <div class="alert alert-danger">
+                                        <strong>Error</strong> Votre photo doit être au format jpg,png ou gif !
+                                    </div>
+                                <?php
+                                break;
+
+                                case '5mo':
+                                  ?>
+                                      <div class="alert alert-danger">
+                                          <strong>Error</strong> Votre photo de profil ne doit pas dépasser 5 Mo !
+                                      </div>
+                                  <?php
+                                  break;
+
+                                  case 'dimension':
+                                    ?>
+                                        <div class="alert alert-danger">
+                                            <strong>Error</strong> Dimension de l'image minimum 400 x 400 et maximum 6000 x 6000 !
+                                        </div>
+                                    <?php
+                                    break;
+                    }
+                }
+                ?>
+
+
 <body>
   
 <header> <?php include "header.php";?> </header>

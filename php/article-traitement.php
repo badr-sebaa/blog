@@ -34,8 +34,7 @@
         }else{ header('Location:article.php?reg_err=short');
             die();}
 
-    }else{header('Location:article.php?reg_err=nocom');
-          die();}
+    }
 
 
 
@@ -47,14 +46,14 @@
       $valid = true;
       echo "1";
       if (isset($_POST['submit'])){   // On se positionne sur le bon formulaire
-        echo "2";
+     
           if (isset($_FILES['file']) and !empty($_FILES['file']['name'])) { // On vérifie qu'il y a bien un fichier
-            echo "3";
+           
               $filename = $_FILES['file']['tmp_name']; // On récupère le nom du fichier
               list($width_orig, $height_orig) = getimagesize($filename); // On récupère la taille de notre fichier (l'image)
 
-              if($width_orig >= 400 && $height_orig >= 300 && $width_orig <= 6000 && $height_orig <= 6000){ // On vérifie que la taille de l'image et correcte
-                echo "4";
+              if($width_orig >= 100 && $height_orig >= 100 && $width_orig <= 6000 && $height_orig <= 6000){ // On vérifie que la taille de l'image et correcte
+                 echo "4";
                   $ListeExtension = array('jpg' => 'image/jpeg', 'jpeg'=>'image/jpeg', 'png' => 'image/png', 'gif' => 'image/gif');
                   $ListeExtensionIE = array('jpg' => 'image/pjpg', 'jpeg'=>'image/pjpeg');
                   $tailleMax = 5242880; // Taille maximum 5 Mo
@@ -65,7 +64,7 @@
                   // 7mo  = 7340032
                   // 10mo = 10485760
                   // 12mo = 12582912
-                  $extensionsValides = array('jpg','jpeg'); // Format accepté
+                  $extensionsValides = array('jpg','jpeg','png','gif'); // Format accepté
 
                   if ($_FILES['file']['size'] <= $tailleMax){ // Si le fichier et bien de taille inférieur ou égal à 5 Mo
                     echo "5";
@@ -80,7 +79,7 @@
                           $resultat = move_uploaded_file($_FILES['file']['tmp_name'], $chemin); // On fini par mettre la photo dans le dossier
 
                           if ($resultat){ // Si on a le résultat alors on va comprésser l'image
-                            echo "7";
+                              echo "7";
                               if (is_readable("../articles/" .$nom . "." . $extensionUpload)) {
                                   $verif_ext = getimagesize("../articles/" .$nom . "." . $extensionUpload);
                                   echo "8";
@@ -164,21 +163,24 @@
                                       header('Location: article.php'); // Pour la redirection
                                       exit;
                                   }else{
-                                      $_SESSION['flash']['warning'] = "Le type MIME de l'image n'est pas bon";
-                                  }
-                              } 
+                                    header('Location:article.php?reg_err=MIME');
+                                    die();
+                                  } 
                           }else
-                              $_SESSION['flash']['error'] = "Erreur lors de l'importation de votre photo.";
+                          header('Location:article.php?reg_err=importerr');
+                          die();
 
                       }else
-                          $_SESSION['flash']['warning'] = "Votre photo doit être au format jpg.";
+                      header('Location:article.php?reg_err=badformat');
+                      die();
 
                   }else
-                      $_SESSION['flash']['warning'] = "Votre photo de profil ne doit pas dépasser 5 Mo !";
+                  header('Location:article.php?reg_err=5mo');
+                  die();
               }else
-                  $_SESSION['flash']['warning'] = "Dimension de l'image minimum 400 x 400 et maximum 6000 x 6000 !";
-          }else
-              $_SESSION['flash']['warning'] = "Veuillez mettre une image !";       
-      }
-  }
+              header('Location:article.php?reg_err=dimension');
+              die(); 
+            } 
+          }
+
 ?>
