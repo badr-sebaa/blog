@@ -117,7 +117,7 @@ require_once 'config.php'; // Pour faire la connexion à notre base de données
                   </div>
 
                   <label for="file" style="margin-bottom: 0; margin-top: 5px; display: inline-flex">
-                  <input id="file" type="file" name="file" class="hide-upload" required/>
+                  <input id="file" type="file" name="file" class="hide-upload"/>
                   <i class="fa fa-plus image-plus"></i>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">

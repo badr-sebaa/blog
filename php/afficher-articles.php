@@ -1,4 +1,5 @@
 <?php include "header.php";?> 
+</br>
  <?php
 
   session_start();
@@ -18,32 +19,30 @@
 <?php
 
 // On récupere les données de l'utilisateur
-$req = $bdd->query('SELECT articles.article,utilisateurs.login,articles.date,articles.image FROM articles LEFT JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id');
+$req = $bdd->query('SELECT articles.article,utilisateurs.login,articles.date,articles.image 
+FROM articles LEFT JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id 
+ORDER BY articles.date DESC ');
 
             while ($donnees = $req->fetch())
             {
                 //On affiche les commentaires des utilisateurs 
-            ?> 
+            ?>
             <div style="margin-left: 30%;" >
-                <div class="card text-white bg-dark mb-3" style="width: 30rem;">
-  <img class="card-img-top" src="<?php echo "../articles/".$donnees['image']?>" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><?= $donnees['login']." le  ".$donnees['date']?></h5>
-    <p class="card-text"><?= $donnees['article']?></p>
-  </div>
-  <div class="card-body">
-    <a href="#" class="card-link">commentaire</a>
-  </div>
-</div>
+              <div class="card text-white bg-dark mb-3" style="width: 30rem;">
+              <?php if($donnees['image'] != NULL){ ?> <img class="card-img-top" src="<?php echo "../articles/".$donnees['image']?>" alt="Card image cap"> <?php } ?>
+                <div class="card-body">
+                  <h5 class="card-title"><?= $donnees['login']." le  ".$donnees['date']?></h5>
+                  <?php if($donnees['article'] != NULL){ ?> <p class="card-text"><?= $donnees['article']?></p> <?php } ?>
+                </div>
+                <div class="card-body">
+                  <a href="#" class="card-link">commentaire</a>
+                </div>
+              </div>
             </div>
-</br>
-<?php
+            </br>
+            <?php
             }
-        ?>  
-
-
-
-
+            ?>  
 
 <?php include "pagination.php";?> 
- <?php include "footer.php"; ?>
+<?php include "footer.php"; ?>
