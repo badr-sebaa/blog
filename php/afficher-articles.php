@@ -29,13 +29,14 @@ ORDER BY articles.date DESC ');
             ?>
             <div style="margin-left: 30%;" >
               <div class="card text-white bg-dark mb-3" style="width: 30rem;">
-              <?php if($donnees['image'] != NULL){ ?> <img class="card-img-top" src="<?php echo "../articles/".$donnees['image']?>" alt="Card image cap"> <?php } ?>
-                <div class="card-body">
+              <div class="card-body">
                   <h5 class="card-title"><?= $donnees['login']." le  ".$donnees['date']?></h5>
                   <?php if($donnees['article'] != NULL){ ?> <p class="card-text"><?= $donnees['article']?></p> <?php } ?>
                 </div>
+              <?php if($donnees['image'] != NULL){ ?> <img class="card-img-top" src="<?php echo "../articles/".$donnees['image']?>" alt="Card image cap"> <?php } ?>
+                
                 <div class="card-body">
-                  <a href="#" class="card-link">commentaire</a>
+                  <a href="#" class="card-link">Commentaires</a>
                 </div>
               </div>
             </div>
@@ -44,5 +45,5 @@ ORDER BY articles.date DESC ');
             }
             ?>  
 
-<?php include "pagination.php";?> 
+<?php include "pagination-test.php";?> 
 <?php include "footer.php"; ?>
