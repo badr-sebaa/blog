@@ -15,6 +15,8 @@
     // on verifie si la case com n'est pas vide malgre le required
     if(!empty($_POST['com'])){
       echo "1";
+        $article_id = $_GET['article_id'];
+        echo $article_id;
         // on recupere le commentaire 
         $com = htmlspecialchars($_POST['com']);
         //on cree une variable avec la date actuel 
@@ -25,15 +27,15 @@
         if(strlen($com) >= 5){
           
             // on insere dans la bdd
-            $insert = $bdd->prepare('INSERT INTO commentaires(commentaire,id_aid_utilisateur,date) VALUES(:commentaire,:id_utilisateur,NOW())');
+            $insert = $bdd->prepare('INSERT INTO commentaires(commentaire,id_article ,login_utilisateur,date) VALUES(:commentaire,:id_article,:login_utilisateur,NOW())');
             $insert->execute(array(
                               'commentaire' => $com,
-                              'id_articles' => ,
-                              'id_utilisateur' => intval($data['id']), // id utilisateur est l'id de l'utilisateur session
+                              'id_article' => $article_id,
+                              'login_utilisateur' => $data['login'], // id utilisateur est l'id de l'utilisateur session
                             ));
             // On redirige avec le message de succès
             echo "2";
-            header('Location:gossip.php?reg_err=success');
+              header('Location:afficher-com.php?articleid='.$article_id);
                     die();
         }else{ header('Location:commentaire.php?reg_err=short');
             die();}

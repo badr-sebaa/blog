@@ -19,7 +19,7 @@
 <?php
 
 // On récupere les données de l'utilisateur
-$req = $bdd->query('SELECT articles.article,utilisateurs.login,articles.date,articles.image 
+$req = $bdd->query('SELECT articles.article,utilisateurs.login,articles.date,articles.image,articles.id
 FROM articles LEFT JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id 
 ORDER BY articles.date DESC ');
 
@@ -35,7 +35,7 @@ ORDER BY articles.date DESC ');
                   <?php if($donnees['article'] != NULL){ ?> <p class="card-text"><?= $donnees['article']?></p> <?php } ?>
                 </div>
                 <div class="card-body">
-                  <a href="#" class="card-link">commentaire</a>
+                  <a href="<?php echo 'afficher-com.php'.'?articleid='.$donnees['id'];?>" class="card-link">commentaire</a>
                 </div>
               </div>
             </div>
