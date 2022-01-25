@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : lun. 24 jan. 2022 à 14:36
+-- Généré le : jeu. 20 jan. 2022 à 13:55
 -- Version du serveur :  5.7.34
 -- Version de PHP : 7.4.21
 
@@ -51,9 +51,7 @@ INSERT INTO `articles` (`id`, `article`, `id_utilisateur`, `image`, `date`, `ver
 (12, 'LINA DROLE A - 20/20', 1, NULL, '2022-01-19 15:36:26', 0),
 (13, 'LINA DRLE OU PAS ? REPONDEZ LA FAFA', 1, '7822bd5dc18ae3be5c792c8e486e056a.gif', '2022-01-19 15:41:29', 0),
 (14, 'LINA DRLE OU PAS ? REPONDEZ LA FAFA', 1, '7822bd5dc18ae3be5c792c8e486e056a.gif', '2022-01-19 15:41:29', 0),
-(15, 'que des n°10 dans ma team', 1, 'c5d71d77b16c287f98945e2cb3861614.jpg', '2022-01-19 15:43:48', 0),
-(16, 'test message seul', 1, NULL, '2022-01-20 18:32:26', 0),
-(17, NULL, 1, '4db758dab63ccee8fa1b236d2f2b4f0d.png', '2022-01-20 18:33:05', 0);
+(15, 'que des n°10 dans ma team', 1, 'c5d71d77b16c287f98945e2cb3861614.jpg', '2022-01-19 15:43:48', 0);
 
 -- --------------------------------------------------------
 
@@ -64,19 +62,10 @@ INSERT INTO `articles` (`id`, `article`, `id_utilisateur`, `image`, `date`, `ver
 CREATE TABLE `commentaires` (
   `id` int(11) NOT NULL,
   `commentaire` varchar(1024) NOT NULL,
-  `id_article` int(11) NOT NULL,
-  `login_utilisateur` varchar(255) NOT NULL,
+  `id_articles` int(11) NOT NULL,
+  `id_utilisateur` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `commentaires`
---
-
-INSERT INTO `commentaires` (`id`, `commentaire`, `id_article`, `login_utilisateur`, `date`) VALUES
-(3, 'test com je suis un hmar ', 11, 'admin', '2022-01-21 18:44:27'),
-(4, 'en mode bg les mecs ', 15, 'admin', '2022-01-24 14:30:04'),
-(5, 'insta test ', 17, 'admin', '2022-01-24 14:35:46');
 
 -- --------------------------------------------------------
 
@@ -156,13 +145,13 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `droits`
