@@ -7,7 +7,7 @@
     $count->execute();
     $tcount=$count->fetchAll();
 
-    $page=$_GET["page"];
+    @$page=$_GET["page"];
     $nbr_elements_par_page = 5;
     $nbr_de_pages= ceil($tcount [0]["cpt"]/ $nbr_elements_par_page);
     $debut= ($page-1)*$nbr_elements_par_page;
@@ -52,6 +52,7 @@
             ?>
             <li class="page-item"><a class="page-link" href="<?php echo '?page='.$i ?>"><?php echo $i ?> </a></li>
             <?php }?>
+            
             </li>
             </ul>
             </nav>
