@@ -47,19 +47,19 @@ if(!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password'
                   "id" => $_SESSION['user']
               ));
               // On redirige
-              header('Location: index_co.php?err=success_password');
+              header('Location:profil.php?err=success_password');
               die();
             }
         }else{
-            header('Location: profil.php?err=login_size');
+            header('Location:profil.php?err=login_size');
         }
      }else{
-                header('Location: profil.php?err=current_password');
+                header('Location:profil.php?err=current_password');
                 die();
              }
 
 }
 else{
-    header('Location: profil.php');
+    header('Location:profil.php');
     die();
 }

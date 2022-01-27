@@ -19,6 +19,15 @@ require_once 'config.php'; // Pour faire la connexion à notre base de données
 <?php include "header.php";?> 
 
 <?php 
+
+// On récupère les infos de l'utilisateur
+$check = $bdd->prepare('SELECT * FROM utilisateurs WHERE id = :id');
+$check->execute(array(
+    "id" => $_SESSION['user']
+));
+$data = $check->fetch();
+
+
     if(isset($_GET['err'])){
       $err = htmlspecialchars($_GET['err']);
       switch($err){
@@ -31,10 +40,37 @@ require_once 'config.php'; // Pour faire la connexion à notre base de données
                     break;
 
                     case 'success_password':
-                                            echo "<div class='alert alert-success'>Le mot de passe a bien été modifié ! </div>";
+                                            echo "<div class='alert alert-success'>Les données ont bien été modifié ! </div>";
                     break;
                     
+                    case 'MIME':
+                          echo "<div class='alert alert-success'>Problème MIME! </div>";
+                    break;
+
+                    case 'readable':
+                          echo "<div class='alert alert-success'>Le fichier n'est pas lisible ! </div>";
+                    break;
+
+                    case 'compression':
+                          echo "<div class='alert alert-success'>Le fichier est mal compresser ! </div>";
+                    break;
                     
+                    case 'badformat':
+                          echo "<div class='alert alert-success'>Le mauvais format d'image ! </div>";  
+                    break;
+                    
+                    case '5mo':
+                          echo "<div class='alert alert-success'>Le fichier est trop volimineux ! </div>";
+                    break;
+                    
+                    case 'dimension':
+                          echo "<div class='alert alert-success'>le fichier est de mauvaise dimension ! </div>";
+                    break;
+
+                    case 'empty':
+                        echo "<div class='alert alert-success'>Le champ est vide ! </div>";
+                    break;
+
                   }
     }
 ?>
@@ -53,12 +89,12 @@ require_once 'config.php'; // Pour faire la connexion à notre base de données
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Profil</p>
 
-                <form class="mx-1 mx-md-4" action="php/profil-traitement.php" method="post">
+                <form class="mx-1 mx-md-4" action="profil-traitement.php" method="post">
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i !class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c" class="form-control" name ="name"/>
+                      <input type="text" id="form3Example1c" class="form-control" name ="name" value="<?php echo $data['name'];?> "/>
                       <label class="form-label" for="form3Example1c">Your Name</label>
                     </div>
                   </div>
@@ -66,7 +102,7 @@ require_once 'config.php'; // Pour faire la connexion à notre base de données
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i !class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example3c" class="form-control" name="login"/>
+                      <input type="text" id="form3Example3c" class="form-control" name="login" value="<?php echo $data['login'];?> "/>
                       <label class="form-label" for="form3Example3c">Your Login</label>
                     </div>
                   </div>
@@ -107,7 +143,7 @@ require_once 'config.php'; // Pour faire la connexion à notre base de données
                     
                     if(file_exists("../avatars/". $_SESSION['user'] . "/" . $_SESSION['avatar']) && isset($_SESSION['avatar'])){
                   ?>
-                  <img src="<?= "../avatars/". $_SESSION['user'] . "/" . $_SESSION['avatar']; ?>" width="120" style="width: 100%" class="rounded-circle z-depth-2" />
+                  <img src="<?= "../avatars/". $_SESSION['user'] . "/" . $_SESSION['avatar']; ?>" width="120" style="width: 100%;height:35%" class="rounded-circle z-depth-2" />
  
                   <?php
                     }else{

@@ -25,8 +25,10 @@
                 {
                     // On créer la session et on redirige sur index.php
                     $_SESSION['user'] = $data['id'];
+                    $_SESSION['id'] = $data['id'];
+                    $_SESSION['id_droit'] = $data['id_droits'];
                     $_SESSION['avatar'] = $data['avatar'];
-                    header('Location: header.php');
+                    header('Location: afficher-articles.php?page=1');
                     die();
                 }else{ header('Location: connection.php?login_err=password'); die(); }
         }else{ header('Location: connection.php?login_err=already'); die(); }

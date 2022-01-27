@@ -105,7 +105,7 @@
                 <div class="form-check d-flex justify-content-center mb-5">
                     
                     <label class="form-check-label" for="form2Example3">
-                      I agree all statements in <a href="#!">Terms of service</a>
+                      I agree all statements in <a href="php/termsofuses.php">Terms of service</a>
                     </label>
                 </div>
 

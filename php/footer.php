@@ -5,35 +5,25 @@
   <div class="container p-4 pb-0">
     <!-- Section: Social media -->
     <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-
-      <!-- Twitter -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-twitter"></i
-      ></a>
-
-      <!-- Google -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-google"></i
-      ></a>
-
+      
       <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/laplateformeio/?hl=fr" role="button">
+      <img alt="instagram" src="../img/logo-ig-png-32464.png" style="width: 31px;">
+      <i class="fab fa-instagram"></i>
+    </a>
 
       <!-- Linkedin -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-linkedin-in"></i
-      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/school/laplateformeio/" role="button">
+      <i class="fab fa-linkedin-in">
+      <img alt="linkedin" src="../img/LI-In-Bug.png" style="width: 38px;">
+        </i>
+      </a>
 
       <!-- Github -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-github"></i
-      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/badr-sebaa/blog" role="button">
+        <img alt="github" src="../img/GitHub-Mark-32px.png"> 
+      <i class="fab fa-github"></i>
+      </a>
     </section>
     <!-- Section: Social media -->
   </div>
@@ -41,8 +31,8 @@
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    © 2022 Copyright:
+    <a class="text-white" href="">GOSSIP_.com</a>
   </div>
   <!-- Copyright -->
 </footer>

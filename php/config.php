@@ -1,6 +1,6 @@
 <?php 
     
-    $host = 'localhost:3307';
+    $host = 'localhost';
     $dbname = 'blog';
     $login = 'root';
     $password = 'root';

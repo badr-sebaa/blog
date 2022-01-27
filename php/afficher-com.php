@@ -15,7 +15,7 @@
 
 
         <!--SELECTION DE LA DB-->
-
+<body style="background-color: #343a35;">
 <?php
 
 // On récupere les données de l'utilisateur
@@ -30,6 +30,21 @@ WHERE articles.id = '{$id_article}'");
               <div class="card text-white bg-dark mb-3" style="width: 30rem;">
               <?php if($donnees['image'] != NULL){ ?> <img class="card-img-top" src="<?php echo "../articles/".$donnees['image']?>" alt="Card image cap"> <?php } ?>
                 <div class="card-body">
+
+                <?php
+                    
+                    if(file_exists("../avatars/". $donnees['id_utilisateur'] . "/" . $donnees['avatar']) && isset($_SESSION['avatar'])){
+                  ?>
+                  <img src="<?= "../avatars/". $donnees['id_utilisateur'] . "/" . $donnees  ['avatar']; ?>" width="120" style="width: 20%" class="rounded-circle z-depth-2" />
+ 
+                  <?php
+                    }else{
+                  ?>
+                  <img src="../avatars/default/default.jpeg" width="120" style="width: 20%" class="rounded-circle"/>
+                  <?php
+                    }
+                  ?>
+
                   <h5 class="card-title"><?= $donnees['login']." le  ".$donnees['date']?></h5>
                   <?php if($donnees['article'] != NULL){ ?> <p class="card-text"><?= $donnees['article']?></p> <?php } ?>
                 </div>
@@ -60,5 +75,5 @@ while ($data = $req2->fetch()){
             <?php
             }
             ?>  
-
+</body>
 <?php include "footer.php"; ?>
